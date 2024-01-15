@@ -1,24 +1,26 @@
-// Система
+
 import { SafeAreaView, View, FlatList } from "react-native";
 import { useState } from "react";
 
-// Стили
+
 import { appStyles } from "./app-styles";
 
-// Компоненты
+
 import Header from "./components/header/header";
 import ListItem from "./components/list/list";
 import Form from "./components/form/form";
 
-// Главная функция проекта
+
 export default function App() {
   const [listOfItems, setListOfItems] = useState([
-    { text: "Купить ...", key: "1" },
-    { text: "Помыть ...", key: "2" },
-    { text: "Сделать ...", key: "3" },
+    { text: "Оплатить", key: "1" },
+    { text: "Купить", key: "2" },
+    { text: "Продать?", key: "3" },
+    { text: "Сделать WPF приложение", key: "4" },
+    { text: "Заказать такси", key: "5" },
   ]);
 
-  // Добавление задачи
+
   const addHandler = (text) => {
     setListOfItems((list) => {
       return [
@@ -31,7 +33,7 @@ export default function App() {
     });
   };
 
-  // Удаление задачи
+ 
   const deleteHandler = (key) => {
     setListOfItems((list) => {
       return list.filter((listOfItems) => listOfItems.key != key);

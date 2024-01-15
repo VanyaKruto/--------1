@@ -1,10 +1,14 @@
-// Стили шапки
+
 import { StyleSheet } from "react-native";
 import { appStyles } from "../../app-styles";
 
 export const headerStyles = StyleSheet.create({
   background: {
-    backgroundColor: appStyles.colorTheme.backgroundColor,
+    backgroundColor: "#FFCC00",
+  },
+  Button: {
+    width:"10px"
+
   },
   text: {
     fontSize: 24,

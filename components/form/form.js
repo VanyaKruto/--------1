@@ -1,21 +1,21 @@
-// Система
+
 import { View, TextInput, Button } from "react-native";
 import { useRef, useState } from "react";
 
-// Стили
+
 import { formStyles } from "./form-styles";
 import { appStyles } from "../../app-styles";
+import { headerStyles } from "../header/header-styles";
 
-// Главная функция проекта
+
 export default function Form({ addHandler }) {
-  const inputRef = useRef(null); // Хук для доп. функции
+  const inputRef = useRef(null);
   const [text, setText] = useState("");
 
   const OnChange = (text) => {
     setText(text);
   };
 
-  // Моя доп. функция (очистка содержимого поля ввода после добавления задачи)
   const clearInput = () => {
     inputRef.current.clear();
   };
@@ -31,10 +31,11 @@ export default function Form({ addHandler }) {
       <Button
         title="Добавить задачу"
         onPress={() => {
-          addHandler(text), clearInput() /* Подключение моей доп. функции */;
+          addHandler(text), clearInput() 
         }}
-        disabled={!text} // мой доп. метод (отключение кнопки при пустом поле ввода)
+        disabled={!text} 
         color={appStyles.colorTheme.backgroundColor}
+        
       />
     </View>
   );
